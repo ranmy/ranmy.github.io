@@ -2,9 +2,10 @@
     <div style="width: 100%;">
       <el-card :body-style="{ padding: '0px' }">
       <div style="padding: 14px;">
-        <span>宝宝出生啦！！</span>
+        <span>{{ text }}</span>
       </div>
-      <img src="@/images/head2.jpeg">
+      <video v-if="isVideo" :src="src" controls="controls"></video>
+      <img v-else :src="src"/>
     </el-card>
     </div>
     
@@ -42,6 +43,11 @@
 
 <script>
 export default {
+  props:[
+    'src',
+    "isVideo",
+    'text'
+  ],
   data() {
     return {
       currentDate: new Date()

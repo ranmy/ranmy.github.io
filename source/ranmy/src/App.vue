@@ -3,7 +3,7 @@
     <div>
       <TopHead/>
     </div>
-    <div style="margin-top: 10px">
+    <div style="margin-top: 30px">
       <TimeLine/>
     </div>
   </div>
@@ -17,7 +17,10 @@ export default {
   components: {
     TimeLine,
     TopHead
-  }
+  },
+  beforeCreate () {
+      document.querySelector('body').setAttribute('style', 'margin:0px;')
+},
 }
 </script>
 
